@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Test Solver</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            width: 500px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .upload-box {
+            border: 2px dashed #007bff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        img {
+            max-width: 100%;
+            margin-top: 10px;
+            display: none;
+        }
+        .result {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .option {
+            padding: 5px;
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>AI Test Solver</h2>
+
+    <div class="upload-box" onclick="document.getElementById('imageInput').click()">
+        Click to upload question image
+    </div>
+
+    <input type="file" id="imageInput" accept="image/*" hidden>
+
+    <img id="previewImage">
+
+    <button onclick="solveQuestion()">Solve Question</button>
+
+    <div class="result" id="resultBox" style="display:none;">
+        <h3>Question:</h3>
+        <p id="questionText"></p>
+
+        <h3>Options:</h3>
+        <div id="optionsContainer"></div>
+
+        <h3>Answer:</h3>
+        <p id="answerText" style="color:green;font-weight:bold;"></p>
+
+        <h3>Explanation:</h3>
+        <p id="explanationText"></p>
+    </div>
+</div>
+
+<script>
+const imageInput = document.getElementById("imageInput");
+const previewImage = document.getElementById("previewImage");
+
+imageInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+async function solveQuestion() {
+    const file = imageInput.files[0];
+    if (!file) {
+        alert("Please upload an image first.");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const response = await fetch("/solve", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await response.json();
+
+    document.getElementById("resultBox").style.display = "block";
+    document.getElementById("questionText").innerText = data.question;
+    document.getElementById("answerText").innerText = data.answer;
+    document.getElementById("explanationText").innerText = data.explanation;
+
+    const optionsContainer = document.getElementById("optionsContainer");
+    optionsContainer.innerHTML = "";
+
+    if (data.options && data.options.length > 0) {
+        data.options.forEach(option => {
+            const div = document.createElement("div");
+            div.className = "option";
+            div.innerText = option;
+            optionsContainer.appendChild(div);
+        });
+    }
+}
+</script>
+
+</body>
+</html>
