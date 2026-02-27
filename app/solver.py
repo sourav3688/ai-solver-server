@@ -70,6 +70,13 @@ def solve_question_from_image(image_path: str):
                             - Node.js - File System
                             - Node.js - Node and Rest API
 
+                            Categories will be as below:
+                            - Basic, Development, Programming and Configuration knowledge.
+                            - Design, Architecture, Framework and Business- Process knowledge.
+                            - Solutioning, Deployment and Implementation knowledge.
+                            - Tools Assets, Functional and Domain knowledge.
+                            - Latest Technology and Industry trends.
+
                             Respond ONLY in valid JSON:
 
                             {
