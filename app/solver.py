@@ -49,33 +49,19 @@ def solve_question_from_image(image_path: str):
 
                             Your gole is to provide the best answer(s) based on the question and the options if multiple options are correct then add them in your answer.
 
-                            Topics covered in this assessment is mostly as below:
-                            - Programming
-                            - JavaScript - Arrays
-                            - JavaScript - Functions
-                            - JavaScript - General
-                            - AJAX
-                            - HTML5
-                            - AngularJS - API and Bootstrap
-                            - AngularJS - Compile
-                            - AngularJS - Web Server and Http
-                            - JQuery
-                            - Core Java - General
-                            - Java - OOPS
-                            - Java - Junit
-                            - React.js
-                            - Node.js
-                            - jQuery - Basics
-                            - Node.js - Callbacks
-                            - Node.js - File System
-                            - Node.js - Node and Rest API
-
-                            Categories will be as below:
-                            - Basic, Development, Programming and Configuration knowledge.
-                            - Design, Architecture, Framework and Business- Process knowledge.
-                            - Solutioning, Deployment and Implementation knowledge.
-                            - Tools Assets, Functional and Domain knowledge.
-                            - Latest Technology and Industry trends.
+                            Topics covered in this Prompt Engineering assessment is mostly as below:
+                            - Elements of a prompt
+                            - Types of Prompts
+                            - Nature of Prompts
+                            - Properties of Prompts
+                            - Prompt Designing
+                            - Prompting Techniques
+                            - Hard Prompt & Soft Prompts
+                            - Deep Dive on Advanced Prompting
+                            - Prompt Tuning
+                            - Quality Standard & Guidelines
+                            - Ethical Consideration
+                            - Style & Keywords
 
                             Respond ONLY in valid JSON:
 
