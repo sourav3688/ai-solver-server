@@ -30,20 +30,34 @@ def solve_question_from_image(image_path: str):
                     {
                         "type": "input_text",
                         "text": """
-Read the test question carefully.
+                            Read and understand the test question carefully.
 
-If the question contains multiple choice options,
-extract them exactly as written.
+                            If the question contains multiple choice options,
+                            extract them exactly as written.
 
-Respond ONLY in valid JSON:
+                            Your gole is to provide the best answer(s) based on the question and the options if multiple options are correct then add them in your answer.
 
-{
-  "question": "...",
-  "options": ["A) ...", "B) ...", "C) ...", "D) ..."],
-  "answer": "...",
-  "explanation": "..."
-}
-"""
+                            Topics covered in this assessment is mostly as below:
+                            - Understanding LLMs and LVMs
+                            - Understanding of GPU Computing
+                            - Designing Chatbots, Virtual Assistants and Dialog Systems
+                            - Designing Advance RAG pipeline concepts
+                            - Exploring finetuning of Model
+                            - Risk Management: Privacy, Security and Compliance
+                            - Tools and Frameworks for Evaluation: Rogue, Deepeval, Meteor, Blue
+                            - Few-Shot Learning Techniques in Language Models
+                            - Edge AI
+                            - Ethical Considerations in AI Language Model Bias Detection and Mitigation
+
+                            Respond ONLY in valid JSON:
+
+                            {
+                                "question": "...",
+                                "options": ["A) ...", "B) ...", "C) ...", "D) ..."],
+                                "answer": "...",
+                                "explanation": "..."
+                            }
+                        """
                     },
                     {
                         "type": "input_image",
