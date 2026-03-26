@@ -19,18 +19,6 @@ def solve_question_from_image(image_path: str):
 
     base64_image = encode_image(image_path)
     data_url = f"data:image/jpeg;base64,{base64_image}"
-    
-    # # LLM Topics
-    # - Understanding LLMs and LVMs
-    # - Understanding of GPU Computing
-    # - Designing Chatbots, Virtual Assistants and Dialog Systems
-    # - Designing Advance RAG pipeline concepts
-    # - Exploring finetuning of Model
-    # - Risk Management: Privacy, Security and Compliance
-    # - Tools and Frameworks for Evaluation: Rogue, Deepeval, Meteor, Blue
-    # - Few-Shot Learning Techniques in Language Models
-    # - Edge AI
-    # - Ethical Considerations in AI Language Model Bias Detection and Mitigation
 
     response = client.responses.create(
         model=MODEL_NAME,
@@ -49,19 +37,17 @@ def solve_question_from_image(image_path: str):
 
                             Your gole is to provide the best answer(s) based on the question and the options if multiple options are correct then add them in your answer.
 
-                            Topics covered in this Prompt Engineering assessment is mostly as below:
-                            - Elements of a prompt
-                            - Types of Prompts
-                            - Nature of Prompts
-                            - Properties of Prompts
-                            - Prompt Designing
-                            - Prompting Techniques
-                            - Hard Prompt & Soft Prompts
-                            - Deep Dive on Advanced Prompting
-                            - Prompt Tuning
-                            - Quality Standard & Guidelines
-                            - Ethical Consideration
-                            - Style & Keywords
+                            Topics covered in this Large Language Model(LLM) assessment is mostly as below:
+                            - Understanding LLMs and LVMs
+                            - Understanding of GPU Computing
+                            - Designing Chatbots, Virtual Assistants and Dialog Systems
+                            - Designing Advance RAG pipeline concepts
+                            - Exploring finetuning of Model
+                            - Risk Management: Privacy, Security and Compliance
+                            - Tools and Frameworks for Evaluation: Rogue, Deepeval, Meteor, Blue
+                            - Few-Shot Learning Techniques in Language Models
+                            - Edge AI
+                            - Ethical Considerations in AI Language Model Bias Detection and Mitigation
 
                             Respond ONLY in valid JSON:
 
